@@ -12,7 +12,7 @@ import java.util.Set;
 public class Issue implements Comparable<Issue> {
     private int id;
     private String name;
-    private int date;
+    private int monthOpen;
     private boolean isOpen;
     private String author;
     private Set<String> label;
@@ -20,6 +20,6 @@ public class Issue implements Comparable<Issue> {
 
     @Override
     public int compareTo(Issue o) {
-        return date - o.date;
+        return monthOpen - o.monthOpen;
     }
 }
