@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IssueRepositoryTest {
     private IssueRepository repository = new IssueRepository();
@@ -37,7 +37,7 @@ class IssueRepositoryTest {
         List<Issue> expected = new ArrayList<>(List.of(issue1, issue5));
         List<Issue> actual = repository.findAllClose();
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test

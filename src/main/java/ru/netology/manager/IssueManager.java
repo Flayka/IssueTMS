@@ -35,36 +35,30 @@ public class IssueManager {
     public List<Issue> filterByAuthor(String author) {
         Predicate<String> byAuthor = Predicate.isEqual(author);
         List<Issue> issues = new ArrayList<>();
-        for (Issue item : repository.getAll()) {
+        for (Issue item : repository.getAll())
             if (byAuthor.test(item.getAuthor())) {
                 issues.add(item);
             }
-            return issues;
-        }
         return issues;
     }
 
     public List<Issue> filterByLabel(Set<String> label) {
         Predicate<Set<String>> byLabel = t -> t.containsAll(label);
         List<Issue> issues = new ArrayList<>();
-        for (Issue item : repository.getAll()) {
+        for (Issue item : repository.getAll())
             if (byLabel.test(item.getLabel())) {
                 issues.add(item);
             }
-            return issues;
-        }
         return issues;
     }
 
     public List<Issue> filterByAssignee(Set<String> assigne) {
         Predicate<Set<String>> byAssignee = t -> t.containsAll(assigne);
         List<Issue> issues = new ArrayList<>();
-        for (Issue item : repository.getAll()) {
+        for (Issue item : repository.getAll())
             if (byAssignee.test((item.getAssignee()))) {
                 issues.add(item);
             }
-            return issues;
-        }
         return issues;
     }
 
